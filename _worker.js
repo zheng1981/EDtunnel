@@ -80,11 +80,11 @@ export default {
 						// return new Response('Not found', { status: 404 });
 						// For any other path, reverse proxy to 'www.fmprc.gov.cn' and return the original response, caching it in the process
 						const hostnames = ['www.fmprc.gov.cn', 'www.xuexi.cn', 'www.gov.cn', 'mail.gov.cn', 'www.mofcom.gov.cn', 'www.gfbzb.gov.cn', 'www.miit.gov.cn', 'www.12377.cn'];
-						url.hostname = hostnames[Math.floor(Math.random() * hostnames.length)];
-						url.protocol = 'https:';
+						网址。主机名= 主机名[数学。楼层( Math.random ( ) * hostnames.length ) ] ; _
+						网址。协议= 'https:' ;
 
-						const newHeaders = new Headers(request.headers);
-						newHeaders.set('cf-connecting-ip', newHeaders.get('x-forwarded-for') || newHeaders.get('cf-connecting-ip'));
+						const  newHeaders = new headers ( request.headers ) ; _
+						新标题。set ( 'cf-connecting-ip' , newHeaders.get ( 'x-forwarded-for' ) || newHeaders.get ( 'cf - connecting-ip ' ) ) ;
 						newHeaders.set('x-forwarded-for', newHeaders.get('cf-connecting-ip'));
 						newHeaders.set('x-real-ip', newHeaders.get('cf-connecting-ip'));
 						newHeaders.set('referer', 'https://www.google.com/q=edtunnel');
